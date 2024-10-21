@@ -1,0 +1,23 @@
+calculate_ppt_score <- function(sequence) {
+  # Define the scoring values for each nucleotide
+  scoring <- c('A' = -2, 'C' = 2, 'G' = -2, 'T' = 3)
+  
+  # Convert the sequence to uppercase to ensure consistency
+  sequence <- toupper(sequence)
+  
+  # Initialize the PPT score
+  ppt_score <- 0
+  
+  # Calculate the score by summing the contributions of each nucleotide
+  for (nucleotide in names(scoring)) {
+    freq <- sum(strsplit(sequence, NULL)[[1]] == nucleotide)
+    ppt_score <- ppt_score + (freq * scoring[[nucleotide]])
+  }
+  
+  return(ppt_score)
+}
+
+# Example usage
+sequence <- "CATCTCTTGTTATTTTTTTTTTTTCTGTCTAC"
+ppt_score <- calculate_ppt_score(sequence)
+ppt_score
