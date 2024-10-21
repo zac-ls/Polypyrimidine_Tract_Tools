@@ -1,0 +1,66 @@
+findPPT <- function(dna_sequence) {
+  # Helper function to count pyrimidines (C, T) in a sequence
+  pyrimidine_content <- function(seq) {
+    sum(charToRaw(seq) %in% c(charToRaw("C"), charToRaw("T")))
+  }
+  
+  # Helper function to check if a sequence has valid purine (A, G) distribution
+  is_valid_purine_distribution <- function(seq) {
+    purine_indices <- gregexpr("[AG]+", seq)[[1]]
+    if (purine_indices[1] == -1) return(TRUE) # No purines
+    
+    purine_lengths <- attr(purine_indices, "match.length")
+    num_purines <- sum(purine_lengths)
+    total_length <- nchar(seq)
+    
+    for (i in seq_along(purine_lengths)) {
+      L <- purine_lengths[i]
+      if (L > 2) return(FALSE) # More than two contiguous purines
+      
+      # For purine segments of length L <= 2, ensure they are surrounded by sufficient pyrimidines
+      if (L <= 2) {
+        pre_pyr <- sum(charToRaw(substr(seq, 1, purine_indices[i] - 1)) %in% c(charToRaw("C"), charToRaw("T")))
+        post_pyr <- sum(charToRaw(substr(seq, purine_indices[i] + L, total_length)) %in% c(charToRaw("C"), charToRaw("T")))
+        
+        # Check if purines are surrounded by at least 4L pyrimidines in total
+        if (pre_pyr + post_pyr < 4 * L) return(FALSE)
+      }
+    }
+    return(TRUE)
+  }
+  
+  # Convert sequence to uppercase to avoid case issues
+  dna_sequence <- toupper(dna_sequence)
+  n <- nchar(dna_sequence)
+  best_ppt <- NULL
+  
+  # Iterate over possible starting points
+  for (start in 1:(n - 8)) {
+    for (end in (start + 8):n) {
+      segment <- substr(dna_sequence, start, end)
+      len <- nchar(segment)
+      
+      # Check both ends are pyrimidines
+      if (substr(segment, 1, 1) %in% c("C", "T") && substr(segment, len, len) %in% c("C", "T")) {
+        
+        # Check for valid purine (A, G) distribution
+        if (is_valid_purine_distribution(segment)) {
+          pyr_content <- pyrimidine_content(segment)
+          # Minimum pyrimidine content requirement or minimum length or uridine content
+          if (len >= 9 || pyr_content >= 5 || pyr_content / len > 2/3) {
+            if (is.null(best_ppt) || nchar(best_ppt) < len) {
+              best_ppt <- segment
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  return(best_ppt)
+}
+
+# Example usage
+sequence <- "catctcttgttattttttttttttctgtctacaagGAAAATATATACC"
+best_ppt <- findPPT(sequence)
+print(best_ppt)
