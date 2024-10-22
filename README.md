@@ -8,7 +8,7 @@ The R functions in this repository are **predictive tools designed to identify a
 
 **find_PPT** ― *PPT Identification Tool*
 
-The function for finding PPTs is optimized to detect the longest PPT based on the heuristic described by Corvelo et al. (2010), which includes the following criteria:
+The function for finding PPTs is optimized to detect the longest PPT based on the heuristic described by Corvelo *et al.* (2010), which includes the following criteria:
 
 1. Both 3′ and 5′ ends must be pyrimidines;
 2. No more than two contiguous purines are allowed;
