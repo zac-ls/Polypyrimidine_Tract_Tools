@@ -1,4 +1,4 @@
-findPPT <- function(dna_sequence) {
+find_PPT <- function(dna_sequence) {
   # Helper function to count pyrimidines (C, T) in a sequence
   pyrimidine_content <- function(seq) {
     sum(charToRaw(seq) %in% c(charToRaw("C"), charToRaw("T")))
@@ -62,5 +62,5 @@ findPPT <- function(dna_sequence) {
 
 # Example usage
 sequence <- "catctcttgttattttttttttttctgtctacaagGAAAATATATACC"
-best_ppt <- findPPT(sequence)
+best_ppt <- find_PPT(sequence)
 print(best_ppt)
