@@ -12,11 +12,11 @@ The R functions in this repository are **predictive tools designed to identify a
 
 The function for finding PPTs is optimized to detect the longest PPT based on the heuristic described by Corvelo *et al.* (2010), which includes the following criteria:
 
-1. Both 3′ and 5′ ends must be pyrimidines;
+1. Both $3′$ and $5′$ ends must be pyrimidines;
 2. No more than two contiguous purines are allowed;
-3. Each purine segment (length L < 3) must be flanked by at least 4L pyrimidines, ensuring a minimum pyrimidine content of over 2/3, with both upstream and downstream pyrimidine segments of length ≥ L;
-4. T(GT)_n stretches are allowed;
-5. Minimum PPT length of 9 nucleotides or a uridine content ≥ 5.
+3. Each purine segment (length $L < 3$) must be flanked by at least 4L pyrimidines, ensuring a minimum pyrimidine content of over 2/3, with both upstream and downstream pyrimidine segments of length $≥ L$;
+4. $T(GT)_n$ stretches are allowed;
+5. Minimum PPT length of 9 nucleotides or a uridine content $≥ 5$.
 
 **`calculate_ppt_score`** ― *PPT Strength Score Tool*
 
