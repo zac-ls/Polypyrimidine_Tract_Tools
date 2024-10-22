@@ -1,0 +1,23 @@
+# Define the function to calculate percentage of pyrimidines
+percent_pyrimidines <- function(sequence) {
+  # Convert sequence to uppercase to ensure case insensitivity
+  sequence <- toupper(sequence)
+  
+  # Count total bases
+  total_bases <- nchar(sequence)
+  
+  # Count occurrences of pyrimidine bases (C and T)
+  count_c <- sum(strsplit(sequence, "")[[1]] == "C")
+  count_t <- sum(strsplit(sequence, "")[[1]] == "T")
+  
+  # Total pyrimidines
+  total_pyrimidines <- count_c + count_t
+  
+  # Calculate and return the percentage of pyrimidines
+  percentage_pyrimidines <- (total_pyrimidines / total_bases) * 100
+  return(percentage_pyrimidines)
+}
+
+# Example usage
+sequence <- "TCgTgTCTTTTTTTTCCTTgT"
+percent_pyrimidines(sequence)
