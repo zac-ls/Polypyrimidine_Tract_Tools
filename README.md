@@ -4,9 +4,9 @@ The polypyrimidine tract (PPT) is a pyrimidine-rich region of pre-messenger RNA 
 
 The R functions in this repository are **predictive tools designed to identify and evaluate PPTs** within a given nucleotide sequence (A, C, G, T). The available tools here are:
 
-- **`find_PPT`**: identifies potential PPTs in a sequence, such as those located upstream of the 3' splice site.
-- **`calculate_ppt_score`**: calculates the strength of a PPT element based on its nucleotide composition. This tool can be applied to PPTs identified by find_PPT.
-- **`percent_pyrimidines`**: determines the percentage of pyrimidine content (C and T) within a specified sequence.
+- **`find_PPT`**: Identifies potential PPTs in a sequence, such as those located upstream of the 3' splice site.
+- **`calculate_ppt_score`**: Calculates the strength of a PPT element based on its nucleotide composition. This tool can be applied to PPTs identified by find_PPT.
+- **`percent_pyrimidines`**: Determines the percentage of pyrimidine content (C and T) within a specified sequence.
 
 **`find_PPT`** ― *PPT Identification Tool*
 
