@@ -2,11 +2,11 @@ The polypyrimidine tract (PPT) is a pyrimidine-rich region of pre-messenger RNA 
 
 The R functions in this repository are **predictive tools designed to identify and evaluate PPTs** within a given nucleotide sequence (A, C, G, T). The available tools here are:
 
-- **find_PPT**: Identifies potential PPTs in a sequence, such as those located upstream of the 3' splice site.
-- **calculate_ppt_score**: Calculates the strength of a PPT element based on its nucleotide composition. This tool can be applied to PPTs identified by find_PPT.
-- **percent_pyrimidines**: Determines the percentage of pyrimidine content (C and T) within a specified sequence.
+- **`find_PPT`**: identifies potential PPTs in a sequence, such as those located upstream of the 3' splice site.
+- **`calculate_ppt_score`**: calculates the strength of a PPT element based on its nucleotide composition. This tool can be applied to PPTs identified by find_PPT.
+- **`percent_pyrimidines`**: determines the percentage of pyrimidine content (C and T) within a specified sequence.
 
-**find_PPT** ― *PPT Identification Tool*
+**`find_PPT`** ― *PPT Identification Tool*
 
 The function for finding PPTs is optimized to detect the longest PPT based on the heuristic described by Corvelo *et al.* (2010), which includes the following criteria:
 
@@ -16,14 +16,13 @@ The function for finding PPTs is optimized to detect the longest PPT based on th
 4. T(GT)_n stretches are allowed;
 5. Minimum PPT length of 9 nucleotides or a uridine content ≥ 5.
 
-**calculate_ppt_score** ― *PPT Strength Score Tool*
+**`calculate_ppt_score`** ― *PPT Strength Score Tool*
 
 The function for calculating the PPT strength score is based on the specific nucleotide composition of the sequence, using the following formula:
 
-PPTscore = f(A)⋅(−2) + f(C)⋅2 + f(G)⋅(−2) + f(T)⋅3
+$\text{PPT}_{\text{score}} = f(A) \cdot (-2) + f(C) \cdot 2 + f(G) \cdot (-2) + f(T) \cdot 3$
 
-Where:
-f(A), f(C), f(G) and f(T) represent the frequency of adenine (A), cytosine (C), guanine (G), and thymine (T) (or uracil), respectively.
+Where: $f(A)$, $f(C)$, $f(G)$ and $f(T)$ represent the frequency of adenine ($A$), cytosine ($C$), guanine ($G$), and thymine ($T$), respectively.
 
 **References:**
 
