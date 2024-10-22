@@ -1,6 +1,6 @@
 The polypyrimidine tract (PPT) is a pyrimidine-rich region of pre-messenger RNA (pre-mRNA) that promotes spliceosome assembly and guides intron removal during RNA splicing. It is typically located near the 3' splice site and is usually 15–20 base pairs long.
 
-The R functions in this repository are predictive tools designed to identify and score PPTs within a given nucleotide sequence (A, C, G, T). The function for finding PPTs is optimized to detect the longest PPT based on the heuristic described by Corvelo et al. (2010), which includes the following criteria:
+The R functions in this repository are **predictive tools designed to identify and score PPTs** within a given nucleotide sequence (A, C, G, T). The function for finding PPTs is optimized to detect the longest PPT based on the heuristic described by Corvelo et al. (2010), which includes the following criteria:
 
 1. Both 3′ and 5′ ends must be pyrimidines;
 2. No more than two contiguous purines are allowed;
