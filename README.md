@@ -26,6 +26,8 @@ $\text{PPT}_{\text{score}} = f(A) \cdot (-2) + f(C) \cdot 2 + f(G) \cdot (-2) + 
 
 Where: $f(A)$, $f(C)$, $f(G)$ and $f(T)$ represent the frequency of adenine ($A$), cytosine ($C$), guanine ($G$), and thymine ($T$), respectively.
 
+For related tools, such as identificaiton and strength of splice sites and branch points, I recommend the Berkeley Drosophila Genome Project's [Splice Site Prediction by Neural Network](https://www.fruitfly.org/seq_tools/splice.html) and [branchpointer](https://www.bioconductor.org/packages/release/bioc/html/branchpointer.html), respectively.
+
 **References:**
 
-Corvelo, A., Hallegger, M., Smith, C. W., & Eyras, E. (2010). Genome-wide association between branch point properties and alternative splicing. *PLoS Computational Biology*, 6(11), e1001016. https://doi.org/10.1371/journal.pcbi.1001016
+Corvelo, A., Hallegger, M., Smith, C. W., & Eyras, E. (2010). Genome-wide association between branch point properties and alternative splicing. *PLoS Computational Biology*, 6(11), e1001016. ht<span>tps://</span>doi.org/10.1371/journal.pcbi.1001016
